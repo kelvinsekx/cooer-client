@@ -1,12 +1,14 @@
+import {baseUrl} from "./../helpers/gen.helpers"
+
 const SIGNIN = async function (user) {
     try {
-        let response = await fetch("/_v1/auth/signin/", {
+        let response = await fetch(`${baseUrl}/_v1/auth/signin/`, {
             method: "POST",
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             },
-            credentials: 'include',
+            credentials: 'omit',
             body: JSON.stringify(user)
         });
         return await response.json()

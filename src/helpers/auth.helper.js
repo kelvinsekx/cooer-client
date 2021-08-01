@@ -1,4 +1,4 @@
-import { SIGNOUT } from "../apis/auth/api-auth";
+import { SIGNOUT } from "./../apis/api-auth";
 
 
 function deleteCookie(name) {

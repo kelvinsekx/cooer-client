@@ -47,6 +47,7 @@ const MUHA = (props) =>{
                     console.log(data.error)
                 } else {
                     if(!isMounted)return;
+                    console.log(data)
                     setGists(data)
                 }
         });

@@ -1,7 +1,9 @@
+import {baseUrl} from "./../../helpers/gen.helpers"
+
 export const LISTNEWFEEDS = async (params, credentials, signal) => {
     //console.log(credentials.token)
     try {
-        let response = await fetch ("/_v1/api/gists/feed/"+ params.userId, {
+        let response = await fetch (`${baseUrl}/_v1/api/gists/feed/`+ params.userId, {
             method: "GET",
             signal: signal,
             headers: {
@@ -19,7 +21,7 @@ export const LISTNEWFEEDS = async (params, credentials, signal) => {
 export const LIST_A_FEED = async (gistID, signal) => {
     //console.log(credentials.token)
     try {
-        let response = await fetch (`/_v1/api/gists/feed/singlefeed/${gistID}`, {
+        let response = await fetch (`${baseUrl}/_v1/api/gists/feed/singlefeed/${gistID}`, {
             method: "GET",
             signal: signal,
             headers: {
@@ -36,7 +38,7 @@ export const LIST_A_FEED = async (gistID, signal) => {
 export const LIST_A_COMMENT = async (commentId, signal) => {
     //console.log(credentials.token)
     try {
-        let response = await fetch (`/_v1/api/gists/feed/singlecomment/${commentId}`, {
+        let response = await fetch (`${baseUrl}/_v1/api/gists/feed/singlecomment/${commentId}`, {
             method: "GET",
             signal: signal,
             headers: {
@@ -53,7 +55,7 @@ export const LIST_A_COMMENT = async (commentId, signal) => {
 export const LISTBYUSER = async (userId, signal, credentials) => {
    // console.log(username, credentials)
     try {
-        let response = await fetch (`/_v1/api/gists/by/${userId}/getCoos`, {
+        let response = await fetch (`${baseUrl}/_v1/api/gists/by/${userId}/getCoos`, {
             method: "GET",
             signal,
             headers: {

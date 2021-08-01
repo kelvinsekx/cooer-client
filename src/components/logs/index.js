@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import {StyledLogs as Styles} from "./logs.styled"
 import Footer from "./footer";
-import { SIGNIN } from "../../apis/auth/api-auth";
+import { SIGNIN } from "../../apis/api-auth"
 
-import auth from "../../helpers/auth.helper";
+import auth from "../../helpers/auth.helper"
 import {Redirect} from "react-router-dom"
 
 const LogForm = (props)=>{

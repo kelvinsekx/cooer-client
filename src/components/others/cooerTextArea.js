@@ -43,7 +43,6 @@ const Styles = styled.div`
             &::placeholder{
                 color: #33333;
                 font-size: 120%;
-                font-weight: bold;
             }
             &:focus {
                 border: none !important;

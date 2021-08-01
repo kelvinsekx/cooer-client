@@ -1,3 +1,5 @@
+import {baseUrl} from "./../../helpers/gen.helpers"
+
 export const CREATE = async (user) => {
     try {
         let response = await fetch(
@@ -7,6 +9,7 @@ export const CREATE = async (user) => {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             },
+            credentials: "omit",
             body: JSON.stringify(user)
         })
         return await response.json()
@@ -18,7 +21,7 @@ export const CREATE = async (user) => {
 export const LIST = async () => {
     try {
         let response = await fetch(
-            "/graphql", {
+            `${baseUrl}/graphql`, {
             method: "POST",
             headers: {
                 "Accept": "application/json",
