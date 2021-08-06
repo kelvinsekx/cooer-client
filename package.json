@@ -2,7 +2,7 @@
   "name": "client",
   "version": "1.0.0",
   "description": "",
-  "homepage":"/",
+  "homepage":"https://competent-bhabha-9a4049.netlify.app",
   "main": "main.js",
   "private": true,
   "scripts": {
