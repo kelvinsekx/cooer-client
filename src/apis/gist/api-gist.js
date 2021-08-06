@@ -72,7 +72,7 @@ export const LISTBYUSER = async (userId, signal, credentials) => {
 
 export const LIKE = async (params, credentials, gistId) => {
     try {
-        let response = await fetch ("/_v1/api/gists/like/", {
+        let response = await fetch (`${baseUrl}/_v1/api/gists/like/`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -89,7 +89,7 @@ export const LIKE = async (params, credentials, gistId) => {
 
 export const UNLIKE = async (params, credentials, gistId) => {
     try {
-        let response = await fetch ("/_v1/api/gists/unlike/", {
+        let response = await fetch (`${baseUrl}/_v1/api/gists/unlike/`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -107,7 +107,7 @@ export const UNLIKE = async (params, credentials, gistId) => {
 
 export const CREATE = async (params, credentials, post) => {
     try {
-        let response = await fetch("/_v1/api/gists/new/" + params.userId, {
+        let response = await fetch(`${baseUrl}/_v1/api/gists/new/${params.userId}`, {
             method: "POST",
             headers: {
                 "Accept": "application/json",
@@ -124,7 +124,7 @@ export const CREATE = async (params, credentials, post) => {
 /**comment, userId, gistId */
 export const COMMENT = async (params, credentials, gistId, comment) => {
     try {
-        let response = await fetch ("/_v1/api/gists/comment/", {
+        let response = await fetch (`${baseUrl}/_v1/api/gists/comment/`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
