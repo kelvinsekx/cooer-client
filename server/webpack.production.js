@@ -11,7 +11,7 @@ const config = {
     filename: "bundle.js",
     publicPath: "/dist",
   },
-	plugins: [new HtmlWebpackPlugin()],
+	plugins: [new HtmlWebpackPlugin({template: "./public/index.html"})],
   module: {
     rules: [
       {
