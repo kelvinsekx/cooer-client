@@ -5,11 +5,11 @@ const cwd = process.cwd();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
   name: "production",
-  entry: [path.join(cwd, "src/main.js")],
+  entry: [path.join(cwd, "/src/main.js")],
   output: {
-    path: path.join(cwd, "/dist"),
+    path: path.join(cwd, "/dist/"),
     filename: "bundle.js",
-    publicPath: "/dist",
+    publicPath: "/dist/",
   },
 	plugins: [new HtmlWebpackPlugin({template: "./public/index.html"})],
   module: {
