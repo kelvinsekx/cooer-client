@@ -68,7 +68,7 @@ div.profiler{
         box-shadow: 0 0 0 2px #f2f2f2;
         img{
             width: 100%;
-            height: auto;
+            height: 100%;
         }
     }
     .otherInfoWrapper {

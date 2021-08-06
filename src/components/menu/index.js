@@ -41,9 +41,7 @@ const Menu = withRouter(({history})=> {
                 username
               }
           }
-        photo{
-          data
-        }
+        photo
         `,{userId: jwt.user.username}, {token: jwt.token}, signal).then(data => {
             if (data && data.error){
                 console.log(data.error)
@@ -61,7 +59,7 @@ const Menu = withRouter(({history})=> {
                     followersLength : person.followers.length,
                     following: person.following.details,
                     followingLength: person.following.length,
-                    photo: person.photo.data,
+                    photo: person.photo,
                     join: person.join
                 }
                 setUser(r)

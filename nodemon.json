@@ -1,5 +1,5 @@
 {
     "verbose": false,
     "watch": ["./server"],
-    "exec": "npx webpack --mode=development --config webpack.config.server.js && node ./dist/bundled.server.js"
+    "exec": "npx webpack --mode=development --config ./server/webpack.config.server.js && node ./server/dist/bundled.server.js"
 }

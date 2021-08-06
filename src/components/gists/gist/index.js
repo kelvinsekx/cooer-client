@@ -52,7 +52,7 @@ return (
     <Styles>
         <div className="h--wrapper">
             <div id="aside">
-                <span id="userAvatar"><img src={`/_v1/api/users/u/photo/${pigeon}?${new Date().getTime()}`} /></span>
+                <span id="userAvatar"><img src={`${payload.postedBy.photo}?${new Date().getTime()}`} /></span>
             </div>
             <div id="rest">
                 <DPHEADER info={{ postedBy, created, pigeon}}/>
@@ -93,7 +93,7 @@ div.h--wrapper {
             overflow: hidden;
             img{
                 width: 100%;
-                height: auto;
+                height: 100%;
             }
         }
     }
@@ -109,6 +109,7 @@ div.h--wrapper {
             justify-content: center;
             span#userAvatar {
                 width: 3.5rem;
+                height: 3.5rem
             }
         }
     }   

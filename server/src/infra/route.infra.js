@@ -1,4 +1,4 @@
-import clientmanager from "./clientmanager";
+import clientmanager from "./clientmanager"
 import baseManager from "./basemanager";
 
 const client = {

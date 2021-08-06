@@ -47,7 +47,7 @@ const MUHA = (props) =>{
                     console.log(data.error)
                 } else {
                     if(!isMounted)return;
-                    console.log(data)
+                    //console.log(data)
                     setGists(data)
                 }
         });
@@ -118,7 +118,7 @@ const MUHA = (props) =>{
                     header={`Suggested Followers`}
                     body={(members !== null ) ? members.map((member, index)=> {
                         return <div className="lilintro" key={index}>
-                        <div className="dp"><img src={`${member.photo.data}?${new Date().getTime()}`}/></div>
+                        <div className="dp"><img src={`${member.photo}?${new Date().getTime()}`}/></div>
                         <div>
                             <Link to={`/profile/${member.username}`}>
                             <p className="un">{member.username}</p>
@@ -186,13 +186,13 @@ div.muha{
             }
             .dp {
                 //border: 1px solid red;
-                width: 3rem;
-                height: 3rem;
+                width: 2rem;
+                height: 2rem;
                 border-radius: 100%;
                 overflow: hidden;
                 img {
                     width: 100%;
-                    height: auto;
+                    height: 100%;
                 }
             }
         }

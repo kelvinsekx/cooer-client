@@ -6,8 +6,13 @@ import { ServerStyleSheet } from 'styled-components';
 //import routes from "./route.config"
 import express from "express";
 
-import MainRouter from "./../../src/MainRouter"
-import Template from "./../template";
+import MainRouter from "../../../src/MainRouter"
+//import Template from "./../../../public/index.html";
+
+import path from "path"
+import fs from "fs";
+import { darkmagenta } from "color-name";
+
 
 const client = {
     createPageRouter() {
@@ -45,13 +50,32 @@ const client = {
                     URL = matched && matched.url.replace("/", '')
     
                     const styles = sheet.getStyleTags();
+
+                    const indexFile = path.resolve("./public/index.html")
     
-                    res.status(200).send(Template({
-                        where: URL,
-                        context: body,
-                        markup: markup, 
-                        styles: styles})
-                    );
+                    fs.readFile(indexFile, 'utf8', (err, data) => {
+                        if (err) {
+                          console.error('Something went wrong:', err);
+                          return res.status(500).send('Oops, better luck next time!');
+                        }
+
+                        data = data.replace('<style id="serverStyles"></style>', styles)
+                        data = data.replace('<div id="root"></div>', 
+                        `<div id="root">
+                          ${markup} 
+                      </div>`) 
+                    
+                        return res.send(
+                          data
+                        );
+                      });
+
+                    // res.status(200).send(Template({
+                    //     where: URL,
+                    //     context: body,
+                    //     markup: markup, 
+                    //     styles: styles})
+                    // );
     
                 })
             }else {
@@ -60,12 +84,30 @@ const client = {
 
                 const styles = sheet.getStyleTags();
 
-                res.status(200).send(Template({
-                    where: '',
-                    context: body,
-                    markup: markup, 
-                    styles: styles})
-                );
+                const indexFile = path.resolve("./public/index.html")
+    
+                    fs.readFile(indexFile, 'utf8', (err, data) => {
+                        if (err) {
+                          console.error('Something went wrong:', err);
+                          return res.status(500).send('Oops, better luck next time!');
+                        }
+                        
+                        data = data.replace('<style id="serverStyles"></style>', styles)
+                        data = data.replace('<div id="root"></div>', 
+                        `<div id="root">
+                          ${markup} 
+                      </div>`)
+
+                        return res.send(
+                          data
+                        );
+                      });
+                // res.status(200).send(Template({
+                //     where: '',
+                //     context: body,
+                //     markup: markup, 
+                //     styles: styles})
+                // );
             }
         })
 

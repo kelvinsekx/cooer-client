@@ -42,16 +42,15 @@ const PROFILE = (props)=> {
                 username
               }
           }
-        photo{
-          data
-        }
+        photo
         `,{userId: match.params.userId}, {token: jwt.token}, signal).then(data => {
             if (data && data.error){
                 console.log(data.error)
                 setRedirectToSignin(true)
             }else {
                if( !isMounted) return;
-                const {data: {person}} = data
+               console.log(data)
+                const {data: {person}} = data;
                 const r = {
                     _id : person._id,
                     name: person.name,
@@ -61,7 +60,7 @@ const PROFILE = (props)=> {
                     followersLength : person.followers.length,
                     following: person.following.details,
                     followingLength: person.following.length,
-                    photo: person.photo.data,
+                    photo: person.photo,
                     join: person.join
                 }
                 setUser(r)

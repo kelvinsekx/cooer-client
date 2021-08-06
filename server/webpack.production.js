@@ -1,7 +1,8 @@
 const path = require("path");
 const webpack = require("webpack");
 const cwd = process.cwd();
-
+//const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
   name: "production",
   entry: [path.join(cwd, "src/main.js")],
@@ -10,6 +11,7 @@ const config = {
     filename: "bundle.js",
     publicPath: "/dist",
   },
+	plugins: [new HtmlWebpackPlugin()],
   module: {
     rules: [
       {

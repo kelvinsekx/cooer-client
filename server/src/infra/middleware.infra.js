@@ -5,7 +5,7 @@ import compress from "compression"
 import cors from "cors"
 import helmet from "helmet";
 
-import {baseUrl} from "./../../src/helpers/gen.helpers"
+import {baseUrl} from "./../utils/gen.util"
 
 import baseManager from "./basemanager"
 const middlewares = {

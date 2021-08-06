@@ -8,7 +8,7 @@ import TxtLoading from "./../components/loading/txtIsLoading"
 const EDIT = (props) => {
     const {match} = props
     const {location: {state: {state}}} = props
-    const [user, setUser] = useState({...state, photo: ""});
+    const [user, setUser] = useState(state);
 
     const handleChange = (e)=> {
         setUser({...user, [e.target.name]: e.target.value});
@@ -27,7 +27,7 @@ const EDIT = (props) => {
                 console.log(data.error)       
                 setUser({...data, error: data.error})      
             } else {
-                console.log(data)       
+                //console.log(data)       
                 setUser({...data, redirectToProfile:true})      
             }    
     })}
@@ -35,7 +35,8 @@ const EDIT = (props) => {
     return (user !== null) ? <EDITPROFILE_COMPONENT
             fileHandler= {
                 (e)=>{
-                    setUser({...user, photo: e.target.files[0]})
+                    console.log(e.target.files[0].name)
+                    setUser({user, photo: e.target.files[0]})
                 }
             }
             handleChange = {handleChange} 

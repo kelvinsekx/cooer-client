@@ -3,7 +3,7 @@ import {baseUrl} from "./../../helpers/gen.helpers"
 export const CREATE = async (user) => {
     try {
         let response = await fetch(
-            "/_v1/api/users/", {
+            `${baseUrl}/_v1/api/users/`, {
             method: "POST",
             headers: {
                 "Accept": "application/json",
@@ -31,9 +31,7 @@ export const LIST = async () => {
 	   	query: `
 		   query{ allPeople(limit: 2){
                 username
-                photo {
-                    data
-                }
+                photo 
                 bio
             }}
 		   `
@@ -48,7 +46,7 @@ export const LIST = async () => {
 export const UPDATE = async (userId, token, user) => {
     try {
         let response = await fetch(
-            `/_v1/api/users/${userId}`, {
+            `${baseUrl}/_v1/api/users/${userId}`, {
             method: "PUT",
             headers: {
                 'Accept': 'application/json',
@@ -65,7 +63,7 @@ export const UPDATE = async (userId, token, user) => {
 export const READ = async (queryDescr, param, token, signal) => {
     try {
         let response = await fetch(
-            "/graphql", {
+            `${baseUrl}/graphql`, {
             method: "POST",
             signal,
             headers: {
@@ -89,7 +87,7 @@ export const READ = async (queryDescr, param, token, signal) => {
 
 export const FOLLOW = async (params, credentials, followId, ID) =>{
     try {
-        let response = await fetch(`/_v1/api/users/${params.userId}/follow`, {
+        let response = await fetch(`${baseUrl}/_v1/api/users/${params.userId}/follow`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",
@@ -106,7 +104,7 @@ export const FOLLOW = async (params, credentials, followId, ID) =>{
 
 export const UNFOLLOW = async (params, credentials, unfollowId, ID) =>{
     try {
-        let response = await fetch(`/_v1/api/users/${params.userId}/unfollow`, {
+        let response = await fetch(`${baseUrl}/_v1/api/users/${params.userId}/unfollow`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",

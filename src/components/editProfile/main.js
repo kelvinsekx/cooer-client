@@ -37,7 +37,7 @@ const EDITPROFILE_COMPONENT = ({handleChange, user, handleSubmit, fileHandler})=
     <form onSubmit={(e)=> e.preventDefault()}>
         <div id="imgWrapper">
             <div id="imgin">
-                <img src={`/_v1/api/users/u/photo/${user.username}`} />
+                <img src={`${user.photo}`} />
             </div>
             <div>
                 <label htmlFor="icon-button-file">
@@ -112,7 +112,7 @@ form{
             margin-left: 0.3rem;
             img {
                 width: 100%;
-                height: auto;
+                height: 100%;
             }
         }
     }

@@ -6,13 +6,13 @@ const NODEEXTERNALS = require("webpack-node-externals");
 const WEBPACK_CONFIG = {
     name: "server",
     entry: [
-      PATH.join(CWD, "./server/server.js")  
+      PATH.join(CWD, "./server/src/server.js")  
     ],
     target: "node",
     output: {
-        path: PATH.join(CWD, "/dist/"),
+        path: PATH.join(CWD, "/server/dist/"),
         filename: "bundled.server.js",
-        publicPath: "/dist/",
+        publicPath: "/server/dist/",
         libraryTarget: "commonjs2" 
     },
     externals: [NODEEXTERNALS()],
