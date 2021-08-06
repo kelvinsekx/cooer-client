@@ -7,11 +7,15 @@ const config = {
   name: "production",
   entry: [path.join(cwd, "/src/main.js")],
   output: {
-    path: path.join(cwd, "/dist/"),
+    path: path.resolve("./dist/"),
     filename: "bundle.js",
-    publicPath: "../dist/",
   },
-	plugins: [new HtmlWebpackPlugin({template: "./public/index.html"})],
+	plugins: [
+		new HtmlWebpackPlugin({
+		inject: true,
+		template: "./public/index.html"
+	})
+],
   module: {
     rules: [
       {
