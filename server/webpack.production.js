@@ -9,7 +9,7 @@ const config = {
   output: {
     path: path.join(cwd, "/dist/"),
     filename: "bundle.js",
-    publicPath: "/dist/",
+    publicPath: "https://competent-bhabha-9a4049.netlify.app/dist/",
   },
 	plugins: [new HtmlWebpackPlugin({template: "./public/index.html"})],
   module: {
