@@ -8,7 +8,7 @@ const config = {
   entry: [path.join(cwd, "/src/main.js")],
   output: {
     path: path.resolve("./dist/"),
-    filename: "bundle.js",
+    filename: "./bundle.js",
   },
 	plugins: [
 		new HtmlWebpackPlugin({
