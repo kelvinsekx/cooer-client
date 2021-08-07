@@ -28,34 +28,27 @@ div#DBHead{
     display: flex;
     align-items: center;
     min-height:2rem;
+    font-size: 90%;
     div.userSummary{
         display: flex;
         align-items: center;
         flex-grow: 1;
         div.userName{
             display: flex;
-            font-size:90%;
             color: #333333;
             font-weight: bold;
             padding-right: 0.3rem;
-            div:nth-child(1){
-                font-size: 120%;
-            }
             div.verify{
                 padding-left: 0.463em;
             }
         }
         div.toPigeon{
-            font-size:80%;
             min-width: 4rem;
             font-family: fantasy;
             a{
                 text-decoration: none;
                 color: rgb(9, 122, 28);
             }
-        }
-        div.joined{
-            font-size: 74%; 
         }
     }
 }
