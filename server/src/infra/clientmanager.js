@@ -51,7 +51,7 @@ const client = {
     
                     const styles = sheet.getStyleTags();
 
-                    const indexFile = path.resolve("./public/index.html")
+                    const indexFile = path.resolve("./public/main.html")
     
                     fs.readFile(indexFile, 'utf8', (err, data) => {
                         if (err) {
@@ -84,7 +84,7 @@ const client = {
 
                 const styles = sheet.getStyleTags();
 
-                const indexFile = path.resolve("./public/index.html")
+                const indexFile = path.resolve("./public/main.html")
     
                     fs.readFile(indexFile, 'utf8', (err, data) => {
                         if (err) {
