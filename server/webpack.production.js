@@ -9,7 +9,7 @@ const config = {
   output: {
     path: path.join(cwd,"/dist/"),
     filename: "bundle.js",
-	  publicPath: "/"
+    publicPath: "/",
     path: path.resolve("./dist/"),
     filename: "/bundle.js",
   },
