@@ -7,8 +7,9 @@ const config = {
   name: "production",
   entry: [path.join(cwd, "/src/main.js")],
   output: {
-    path: path.resolve("./dist/"),
+    path: path.join(cwd,"/dist/"),
     filename: "bundle.js",
+	  publicPath: "/"
   },
 	plugins: [
 		new HtmlWebpackPlugin({
