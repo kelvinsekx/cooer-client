@@ -10,8 +10,6 @@ const config = {
     path: path.join(cwd,"/dist/"),
     filename: "bundle.js",
     publicPath: "/",
-    path: path.resolve("./dist/"),
-    filename: "/bundle.js",
   },
 	plugins: [
 		new HtmlWebpackPlugin({
