@@ -3,13 +3,17 @@ import {StyledRegisterForm as Styles} from "./form.styled"
 
 import {Redirect, Link} from "react-router-dom"
 import INPUT from "./input";
-import RADIO  from "./radioInput"
-import {RadioButtonGroup} from "grommet"
 
 import {CREATE} from "../../../apis/user/api-user"
 
+import { 
+    RadioButtonGroup, 
+    Button as GrommetButton,
+    Card,
+    CardFooter,
+    CardHeader, 
+    CardBody} from 'grommet';
 
-import { Button as GrommetButton } from 'grommet';
 const REGISTERFORM = ()=>
 {
     const [values, setValues] = useState({
@@ -61,13 +65,13 @@ const REGISTERFORM = ()=>
     }
 return (
 <Styles>
-    <div>
+    <Card>
         <form onSubmit={(e)=>e.preventDefault()}>
             <div id='fieldset'>
-                <div>
+                <CardHeader>
                     <legend>Join the new world, it's quick</legend>
-                </div>
-                <div id="formContent">
+                </CardHeader>
+                <CardBody id="formContent">
                     <div className="ytr">
                         <INPUT 
                             placeholder="name"
@@ -81,23 +85,17 @@ return (
                             handleChange={handleChange}
                         /> 
                     </div>
-                    <div className="ytr">
+                    <div>
                         <INPUT 
                             placeholder="email" 
-                            w="60"
+                            w="90"
                             name='email'
                             handleChange={handleChange}
                         /> 
                     </div>
-                    <div className="ytr">
-                        <INPUT 
-                            placeholder="telephone" w="42" 
-                            type="tel"
-                            name='telephone' 
-                            handleChange={handleChange}
-                        />
+                    <div>
                         <INPUT
-                            placeholder="password" w="42" 
+                            placeholder="password" w="90" 
                             type="password" minLength="8"
                             name='password'
                             handleChange={handleChange}
@@ -114,7 +112,7 @@ return (
                             onChange={handleChange("gender")}
                     />
                     </div>
-                </div>
+                </CardBody>
                 {values.error && <div style={{color: "white", backgroundColor: "rgba(197, 12, 0, 0.45)", padding: "0.3em 1em", fontWeight: "600"}}>{values.error}</div>}
                 <GrommetButton 
                     type="submit" 
@@ -123,8 +121,11 @@ return (
                 </GrommetButton>
             </div>
         </form>
-    </div>
-    <div>or rather <Link to="/">Log In</Link></div>
+        <CardFooter
+        alignSelf="center">
+            <p>or rather <Link to="/">Log In</Link></p>
+        </CardFooter>
+    </Card>
 </Styles>
 )
 }

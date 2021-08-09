@@ -31,7 +31,6 @@ export const hm = (props)=> {
 const Styles = styled.div`
 div#main{
     display: flex;
-    width: 99.5vw;
     flex-direction: column;
     margin: 0 auto;
     align-items: center;
@@ -41,12 +40,8 @@ div#main{
 }
 @media (min-width: 900px){
     div#main{
-        margin-top:0px;
         flex-direction: row;
-        height: 99vh;
-        .lg{
-            padding-top: 0rem;
-        }
+        height: 100vh;
     }
 }
 

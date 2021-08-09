@@ -4,7 +4,10 @@ import Footer from "./footer";
 import { SIGNIN } from "../../apis/api-auth"
 
 import auth from "../../helpers/auth.helper"
+import {SekxReactAlert} from "../../helpers/react.helpers"
 import {Redirect} from "react-router-dom"
+
+import { Button as GrommetButton, Card } from 'grommet';
 
 const LogForm = (props)=>{
     const [values, setValues] = useState({
@@ -48,9 +51,11 @@ const LogForm = (props)=>{
     }
 return (
 <Styles>
-    <div id="logs">
+    <Card 
+        id="logs">
         <form onSubmit={(e)=>e.preventDefault()}>
-        {values.error && <div style={{color: "white", backgroundColor: "rgba(197, 12, 0, 0.45)", padding: "0.3em 1em", fontWeight: "600"}}>{values.error}</div>}
+        {values.error && 
+        <SekxReactAlert>{values.error}</SekxReactAlert>}
             <input 
                 placeholder="email: example@gmail.com" 
                 type="text"
@@ -63,10 +68,14 @@ return (
                 name="password"
                 onChange={handleChange("password")}
             />
-            <button type="submit" onClick={submit}>Log In</button>
+             <GrommetButton 
+                    type="submit" 
+                    label="Log in"
+                    onClick={submit}>
+                </GrommetButton>
         </form>
         <Footer />
-    </div>
+    </Card>
 </Styles>
 )};
 

@@ -44,12 +44,12 @@ export const StyledLogs = styled.div`
 display: flex;
 justify-content: center;
 #logs {
-background-color: white;
+//background-color: white;
 min-height: 20rem;
 width: 55%;
 padding: 3rem;
 border-radius: 5px;
-box-shadow: 3px 5px 40px 3px rgba(71, 67, 67, 0.2);
+//box-shadow: 3px 5px 40px 3px rgba(71, 67, 67, 0.2);
 form{
     display: flex;
     flex-direction: column;
@@ -94,7 +94,7 @@ form{
     padding: 3rem;
     width: 100%;
     form{
-        input, button {
+        input {
             padding: 0.19rem 1rem;
             font-size: 1.37rem;
             border-radius: 0.31rem;

@@ -1,21 +1,16 @@
 import styled, {css} from "styled-components";
 
 export const StyledRegisterForm = styled.div`
-box-shadow: 2px 4px 5px 4px rgba(150, 140, 140, 0.323);
-width: 90%;
-background-color: hsla(0, 0%, 100%, 0.87);
-border-radius: 5px;
-border: 1px solid rgba(90, 0, 0, 0.4);
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 1em 0;
+width: 80%;
 a{
     display: inline-block;
     color: black;
-    background-color: rgba(19, 212, 106, 0.6);
+    border-bottom: 2px solid rgba(19, 212, 106, 0.6);
     padding:0 0.8em;
     text-decoration: none;
+    &:hover{
+        background:rgba(19, 212, 106, 0.3);
+    }
 }
 div{
     background-color: white;
@@ -75,7 +70,7 @@ div{
     }
 }
 @media (min-width:900px){
-    width:38% !important;
+    width:40%;
 }
 `
 

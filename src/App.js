@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import MainRouter from "./MainRouter";
-import {createBrowserHistory} from "history"
 import {hot} from "react-hot-loader";
 import { Grommet } from 'grommet';
 
@@ -10,7 +9,7 @@ const theme = {
       font: {
         family: 'Raleway, sans-serif',
         size: '1rem',
-        height: '24px',
+        height: '1.6rem',
       },
       colors: {
           control: "rgba(12, 230, 23, 0.5)"
