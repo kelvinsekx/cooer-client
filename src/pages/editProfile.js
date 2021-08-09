@@ -9,6 +9,7 @@ const EDIT = (props) => {
     const {match} = props
     const {location: {state: {state}}} = props
     const [user, setUser] = useState(state);
+    const [photo, setPhoto] = useState("")
 
     const handleChange = (e)=> {
         setUser({...user, [e.target.name]: e.target.value});
@@ -20,7 +21,7 @@ const EDIT = (props) => {
         user.name && userData.append('name', user.name)    
         user.telephone && userData.append('telephone', user.telephone)    
         user.bio && userData.append('bio', user.bio)    
-        user.photo && userData.append('photo', user.photo) 
+        photo && userData.append('photo', photo) 
         user.anonymousname && userData.append('anonymousname', user.anonymousname)    
         UPDATE( match.params.userId, jwt.token, userData).then((data) => {      
             if (data && data.error) { 
@@ -35,12 +36,12 @@ const EDIT = (props) => {
     return (user !== null) ? <EDITPROFILE_COMPONENT
             fileHandler= {
                 (e)=>{
-                    console.log(e.target.files[0].name)
-                    setUser({user, photo: e.target.files[0]})
+                    setPhoto(e.target.files[0])
                 }
             }
             handleChange = {handleChange} 
             user = {user}
+            photo = {photo}
             handleSubmit = {handleSubmit}
         /> : <TxtLoading />
 }

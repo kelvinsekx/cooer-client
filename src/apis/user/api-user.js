@@ -18,7 +18,7 @@ export const CREATE = async (user) => {
     }
 }
 
-export const LIST = async () => {
+export const LIST = async (reqGraph) => {
     try {
         let response = await fetch(
             `${baseUrl}/graphql`, {
@@ -28,13 +28,7 @@ export const LIST = async () => {
                 "Content-Type": "application/json"
             },
 	   body: JSON.stringify({
-	   	query: `
-		   query{ allPeople(limit: 2){
-                username
-                photo 
-                bio
-            }}
-		   `
+	   	query: reqGraph
 	   })
         })
         return await response.json()

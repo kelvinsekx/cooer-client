@@ -4,10 +4,12 @@ import {StyledRegisterForm as Styles} from "./form.styled"
 import {Redirect, Link} from "react-router-dom"
 import INPUT from "./input";
 import RADIO  from "./radioInput"
+import {RadioButtonGroup} from "grommet"
 
 import {CREATE} from "../../../apis/user/api-user"
 
 
+import { Button as GrommetButton } from 'grommet';
 const REGISTERFORM = ()=>
 {
     const [values, setValues] = useState({
@@ -19,14 +21,12 @@ const REGISTERFORM = ()=>
         password: '',
         securityQuestion: "",
         securityAnswer: "",
-        gender: "",
+        gender: "Male",
         error: '',
         open: false
     });
-
     function handleChange(name){
         return function(event){
-            console.log(event.target.value)
             return setValues({...values, [name]: event.target.value})
         }
     }
@@ -106,33 +106,21 @@ return (
                     
                     <div className="gendo">
                         Gender
-                        <div>
-                            <RADIO 
-                                value="Female"  
-                                ID="female" 
-                                handleChange={handleChange}
-                                name="gender"
-                            />
-                            <RADIO 
-                                ID="male" 
-                                value="Male" 
-                                handleChange={handleChange}
-                                name="gender"
-                            />
-                            <RADIO 
-                                ID="custom" 
-                                value="Custom" 
-                                handleChange={handleChange}
-                                name="gender"
-                            />
-                        </div>
+                        <RadioButtonGroup
+                            name="gender"
+                            options={['Male', 'Female', 'Custom']}
+                            value={values.gender}
+                            direction="row"
+                            onChange={handleChange("gender")}
+                    />
                     </div>
                 </div>
                 {values.error && <div style={{color: "white", backgroundColor: "rgba(197, 12, 0, 0.45)", padding: "0.3em 1em", fontWeight: "600"}}>{values.error}</div>}
-                <button 
+                <GrommetButton 
                     type="submit" 
-                    onClick={submit}>Create Account
-                </button>
+                    label="Create account"
+                    onClick={submit}>
+                </GrommetButton>
             </div>
         </form>
     </div>

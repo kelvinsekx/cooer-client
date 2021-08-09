@@ -31,7 +31,7 @@ const editInfo =  [
         }
     ]
 
-const EDITPROFILE_COMPONENT = ({handleChange, user, handleSubmit, fileHandler})=> 
+const EDITPROFILE_COMPONENT = ({handleChange, user, handleSubmit, fileHandler, photo})=> 
 <StyledWrapper>
 <Styles>
     <form onSubmit={(e)=> e.preventDefault()}>
@@ -51,8 +51,8 @@ const EDITPROFILE_COMPONENT = ({handleChange, user, handleSubmit, fileHandler})=
                     <span className="upload">
                         <span>Upload a photo</span>
                     </span>
-                    <small style={{color: 'rgb(27, 214, 10)'}}>    
-                        {user.photo ? user.photo.name : ''}
+                    <small style={{color: 'rgb(27, 214, 10)', display: "block"}}>    
+                        {photo ? photo.name : ''}
                     </small>
                 </label>
             </div>
@@ -86,7 +86,7 @@ width: 100%;
     min-height: 1.3rem;
     width: 60vw;
     span{
-        display:inherit;
+        display:inline-block;
         border: 2px solid white;
         padding: 0.1em;
         background-color: rgb(20, 354, 70);;

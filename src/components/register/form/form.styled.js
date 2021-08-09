@@ -50,7 +50,6 @@ div{
                 border: 0px;
                 border-radius: 2px;
                 width: 70%;
-                padding: 0.2em 0;
             }
         }
     }

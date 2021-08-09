@@ -6,14 +6,16 @@ import {Redirect} from "react-router-dom"
 
 import auth from "./../helpers/auth.helper"
 
-const HOME = (props) => {
+const HOME = () => {
         return (
-            <div>
-                <Styles>
+            <Styles>
+                <div id="main">
                     <HomeBanner />
-                    <LogForm />
-                </Styles>
-            </div>
+                    <div style={{ flexGrow: 1}} className="lg">
+                        <LogForm />
+                    </div>
+                </div>
+            </Styles>
         )
 
 }
@@ -27,17 +29,27 @@ export const hm = (props)=> {
 }
 
 const Styles = styled.div`
-display: flex;
-width: 80vw;
-margin: 8% auto;
-align-items: center;
-//border: 2px solid red;
-@media (max-width: 900px){
-    margin-top:0px;
-    flex-direction: column;
+div#main{
+    display: flex;
     width: 99.5vw;
-    gap: 3rem;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    .lg{
+        padding-top: 2rem;
+    }
 }
+@media (min-width: 900px){
+    div#main{
+        margin-top:0px;
+        flex-direction: row;
+        height: 99vh;
+        .lg{
+            padding-top: 0rem;
+        }
+    }
+}
+
 `
 
 export default HOME;

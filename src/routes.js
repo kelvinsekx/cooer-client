@@ -9,6 +9,7 @@ import Profile from "./user/profile"
 import EditProfile from "./pages/editProfile";
 import Comment from "./pages/comment";
 import Status from "./pages/status";
+import Forgot from "./pages/forgotPassword"
 
 export const NonProtectedRoutes = [
     {
@@ -22,6 +23,10 @@ export const NonProtectedRoutes = [
     {
         path: "/register",
         component: Register
+    },
+    {
+        path: "/retrieve-password",
+        component: Forgot
     }
 ];
 

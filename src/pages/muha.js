@@ -52,7 +52,11 @@ const MUHA = (props) =>{
                 }
         });
 
-        LIST().then(data=> {
+        LIST(`query {allPeople(limit: 3, random: true){
+            username
+            photo 
+            bio
+        }}`).then(data=> {
             if(data.error){
                 console.log(data.error)
             }else {

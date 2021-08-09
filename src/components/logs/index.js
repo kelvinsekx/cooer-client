@@ -48,7 +48,7 @@ const LogForm = (props)=>{
     }
 return (
 <Styles>
-    <div>
+    <div id="logs">
         <form onSubmit={(e)=>e.preventDefault()}>
         {values.error && <div style={{color: "white", backgroundColor: "rgba(197, 12, 0, 0.45)", padding: "0.3em 1em", fontWeight: "600"}}>{values.error}</div>}
             <input 

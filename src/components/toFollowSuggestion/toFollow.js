@@ -13,7 +13,11 @@ function followTheseAwesomeGuyz () {
     useEffect(() => {
         let isMounted = true;
 
-        LIST().then(data=> {
+        LIST(`query {allPeople(limit: 8, random: true){
+            username
+            photo 
+            bio
+        }}`).then(data=> {
             if(data.error){
                 console.log(data.error)
             }else {

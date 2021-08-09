@@ -7,12 +7,17 @@ export const StyledFooter = styled.div`
         flex-direction: column;
         align-items: center;
         div.forgotten{
+            cursor: pointer;
             text-align: center;
             width: 100%;
             color: #0e7713;
             font-size:109%;
             padding-bottom: 1%;
             border-bottom: 1px solid rgba(0,0,0,0.3);
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
         }
     }
     footer>.c_n_a{
@@ -20,12 +25,11 @@ export const StyledFooter = styled.div`
         font-size: 1.06rem;
         border-radius: 5px;
         border: none;
-        color: black;
         a{
-            background-color: rgba(19, 212, 106, 0.6);
+            border-bottom: 2px solid rgba(19, 212, 106, 0.5);
             text-decoration: none;
             display: inline-block;
-            color: black;
+            color: inherit;
             &:hover{
                 background-color: rgba(19, 212, 106, 0.4);
             }
@@ -37,9 +41,12 @@ export const StyledFooter = styled.div`
 `;
 
 export const StyledLogs = styled.div`
-// border: 2px solid red;
+display: flex;
+justify-content: center;
+#logs {
 background-color: white;
 min-height: 20rem;
+width: 55%;
 padding: 3rem;
 border-radius: 5px;
 box-shadow: 3px 5px 40px 3px rgba(71, 67, 67, 0.2);
@@ -57,9 +64,6 @@ form{
         margin-bottom: 0.9rem;
         border: 1px solid grey;
         color: grey;
-        &::placeholder{
-            font-size: 1.54rem;
-        }
         &:hover{
             border: 1px solid #0e7713;
         }
@@ -80,11 +84,15 @@ form{
         }
     }
 }
+}
 
-@media (max-width: 550px){
+// mobile screen
+@media (max-width: 900px){
+    width: 70%;
+   #logs{
     min-height: 18rem;
-    padding: 1.3rem;
-    width: 90vw;
+    padding: 3rem;
+    width: 100%;
     form{
         input, button {
             padding: 0.19rem 1rem;
@@ -101,6 +109,15 @@ form{
         button{
             font-size: 99%;
         }
+    }
+   }
+}
+
+// very small screen
+@media (max-width: 900px){
+    width: 100%;
+    #logs{ 
+
     }
 }
 `
