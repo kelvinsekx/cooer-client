@@ -63,7 +63,6 @@ return (
                     actions={{clickLike, like}} 
                     gist={payload}/>
                 </div>
-                {/* <ENGAGE payload={{ handleChange, doComment, comm, commentNumber}} /> */}
             </div>
         </div>
     </Styles>
