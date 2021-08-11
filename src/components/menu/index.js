@@ -85,11 +85,11 @@ const Menu = withRouter(({history})=> {
                                 <span><FiTag style={{fontSize: "130%"}}/></span> <span>Ayoze</span>
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to="/street" style={isActive(history, "/street")}className="navIconBtn">
                                 <span><FiSliders style={{fontSize: "130%"}}/></span> <span>Street</span>
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             {
                                 auth.isAuthenticated() && 
@@ -105,11 +105,11 @@ const Menu = withRouter(({history})=> {
                                 </Link>
                             }
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to="/trending" style={isActive(history, "/trending")}className="navIconBtn">
                             <span><FiLifeBuoy style={{fontSize: "130%"}}/></span>   <span>Trending</span>
                             </Link>
-                        </li>
+                        </li> */}
                         <li onClick={()=>auth.clearJWT(()=>history.push("/login/?__rd"))} className="navIconBtn">
                             <span><FiUserX style={{fontSize: "130%"}}/></span>   <span>Log out</span>
                         </li>
