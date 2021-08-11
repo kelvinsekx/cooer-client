@@ -1,42 +1,18 @@
-let second = 1000,
-    min = (60*second),
-    hour = (60*min),
-    day = (24 * hour);
+import dayjs from "dayjs"
+import relativeTime  from 'dayjs/plugin/relativeTime'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
+dayjs.extend(relativeTime )
+dayjs.extend(utc)
+dayjs.extend(timezone)
 
-const TIMEHELPERS = {
-    getTime (time = new Date) {
-        var o = new Object();
-        o.min = `${Math.round(time / min)} mins ago`;
-        o.hour = `
-            ${Math.round(time / hour)} 
-            ${(Math.round(time / hour) > 1 ) ? "hours" : "hour"} ago`;
-        o.day  = `
-            ${Math.round(time / day)} 
-            ${(Math.round(time / day) > 1 ) ? "days" : "day"} ago`;
-        return o;
-    },
+export const printTimeLapse = function (time) {
+    let theDay = new Date(time);
+    var dd = String(theDay.getDate()). padStart(2, '0');
+    var mm = String(theDay.getMonth() + 1). padStart(2, '0');
+    var yyyy = theDay.getFullYear();
 
-    friendlierTime (time) {
-        let result;
-    
-        if (( time + (1.5*min)) > Date.now()) {
-            return result = "just now"
-        }
-        if(Date.now() > time){
-            const timeDifference = Date.now() - time;
-            if (timeDifference < hour){
-                return result = this.getTime(timeDifference).min;
-            }
-    
-            if((timeDifference > hour) && (timeDifference < day)){
-                return result = this.getTime(timeDifference).hour;
-            }else if((timeDifference > hour) && (timeDifference > day)){
-                return result = this.getTime(timeDifference).day;
-            }else if (timeDifference > (24*day)) {
-                return result = new Date(time).toLocaleDateString()
-            }
-        }
-    }
+    const guess = dayjs.tz.guess()
+    const fr = `${yyyy}-${mm}-${dd}`
+    return dayjs(fr).tz(guess).fromNow()
 }
-
-export default TIMEHELPERS;

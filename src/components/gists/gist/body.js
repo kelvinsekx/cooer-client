@@ -12,7 +12,13 @@ const BODY = ({info, actions, gist})=> {
     return <Styles>
     <div id="gistBody">
         <div className="gistText">
-            <BodyPrinter text={info.text} /> 
+            <Link
+                to={{
+                    pathname:`${info.link}`,
+                    state: {gist}
+                }}>
+                <BodyPrinter text={info.text} /> 
+            </Link>
         </div>
         <div className="gistInfo">
             <div className="gistActors">
@@ -68,6 +74,7 @@ div#gistBody {
     gap: 0.45em;
     div.gistText{
         font-size:97%;
+        color: #333333;
     }
     div.gistInfo{
         display: flex;
@@ -76,7 +83,7 @@ div#gistBody {
             flex-basis: 20rem;
             display: flex;
             justify-content: space-between;
-            color: #444;
+            color: rgba(0,0,0,0.5);
             div{
                 z-index: 0;
                 display: flex;

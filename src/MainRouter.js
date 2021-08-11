@@ -54,7 +54,7 @@ div#main{
 @media (max-width: 540px) {
     div#main{
         grid-template-rows: 
-        [nav-navEnd] 94vh [bodyStart-bodyEnd] 6vh;
+        [nav-navEnd] 90% [bodyStart-bodyEnd] 9%;
         grid-template-columns: [d] 100%;
         grid-template-areas: 
         "d"
@@ -75,6 +75,7 @@ div#main{
              grid-row: 1/2;
             overflow-y: scroll;
             overflow-x: hidden;
+            margin-bottom: 3rem;
         }
     }
 }

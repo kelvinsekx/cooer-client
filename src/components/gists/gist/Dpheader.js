@@ -12,7 +12,7 @@ const DPHEADER = ({info}) =>
             <div className="verify">~</div>
         </div>
         <div className="toPigeon">
-            <Link to={`/profile/${info.pigeon}`}>@{info.pigeon.length > 7 ? info.pigeon.substring(0, 5) + "...": info.pigeon}</Link> 
+            <Link to={`/profile/${info.pigeon}`}>@{info.pigeon.length > 10 ? info.pigeon.substring(0, 5) + "...": info.pigeon}</Link> 
         </div>
         <div className="joined">
             <CooerTimeTeller time={info.created} />
@@ -24,11 +24,11 @@ const DPHEADER = ({info}) =>
 const Styles = styled.div`
 div#DBHead{
     background-color: white;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     min-height:2rem;
-    font-size: 90%;
+    font-size: 98%;
     div.userSummary{
         display: flex;
         align-items: center;
@@ -43,12 +43,14 @@ div#DBHead{
             }
         }
         div.toPigeon{
-            min-width: 4rem;
             font-family: fantasy;
             a{
                 text-decoration: none;
-                color: rgb(9, 122, 28);
+                color: inherit;
             }
+        }
+        div.joined {
+            padding-left: 0.3em;
         }
     }
 }

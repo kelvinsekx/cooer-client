@@ -158,7 +158,7 @@ div.muha{
         .dp {
             //border: 1px solid red;
             width: 3rem;
-            height: 3rem;
+            height: auto;
             border-radius: 100%;
             overflow: hidden;
             img {

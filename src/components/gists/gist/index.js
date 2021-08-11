@@ -70,7 +70,7 @@ return (
 )}
 
 const Styles = styled.div`
-border-top: 0.10rem solid rgba(0, 0, 0, 0.2);
+border-top: 0.05rem solid rgba(0, 0, 0, 0.2);
 display: flex;
 align-items: center;
 min-height: 6rem;
@@ -87,13 +87,13 @@ div.h--wrapper {
             display: inline-block;
             align-self: center;
             width: 3.4rem;
-            max-height: 3.5rem;
+            height: 3.4rem;
             border-radius: 100%;
             box-shadow: 0 0 0 1.4px #f2f2f2;
             overflow: hidden;
             img{
                 width: 100%;
-                height: 100%;
+                height: auto;
             }
         }
     }

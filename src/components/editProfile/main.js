@@ -76,7 +76,6 @@ const EDITPROFILE_COMPONENT = ({handleChange, user, handleSubmit, fileHandler, p
 
 const StyledWrapper = styled.div`
 display: flex;
-// border: 1px solid red;
 `
 const Styles = styled.div`
 width: 100%;
@@ -112,7 +111,7 @@ form{
             margin-left: 0.3rem;
             img {
                 width: 100%;
-                height: 100%;
+                height: auto;
             }
         }
     }
