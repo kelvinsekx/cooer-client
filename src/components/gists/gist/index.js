@@ -52,7 +52,7 @@ return (
     <Styles>
         <div className="h--wrapper">
             <div id="aside">
-                <span id="userAvatar"><img src={`${payload.postedBy.photo}?${new Date().getTime()}`} /></span>
+                <div id="userAvatar"><img src={`${payload.postedBy.photo}?${new Date().getTime()}`} /></div>
             </div>
             <div id="rest">
                 <DPHEADER info={{ postedBy, created, pigeon}}/>
@@ -69,11 +69,11 @@ return (
 )}
 
 const Styles = styled.div`
-border-top: 0.05rem solid rgba(0, 0, 0, 0.2);
+border: 0.05rem solid rgba(0, 0, 0, 0.2);
+border-radius: 2px;
 display: flex;
-align-items: center;
-min-height: 6rem;
-padding: 0.3em 0;
+padding: 0.6em;
+margin: 1em 0;
 div.h--wrapper {
     flex-grow: 1;
     display: flex;
@@ -82,22 +82,23 @@ div.h--wrapper {
         width:19%;
         display:flex;
         justify-content: center;
-        span#userAvatar {
+        div#userAvatar {
             display: inline-block;
             align-self: center;
-            width: 3.4rem;
-            height: 3.4rem;
+            margin-top: -2rem;
+            width: 2.7rem;
+            height: 2.7rem;
             border-radius: 100%;
             box-shadow: 0 0 0 1.4px #f2f2f2;
             overflow: hidden;
             img{
                 width: 100%;
-                height: 100%;
+                height: auto;
             }
         }
     }
     div#rest {
-        width:80%;
+        flex-grow: 1;
     }
 }
 
@@ -105,10 +106,11 @@ div.h--wrapper {
     div.h--wrapper {
         div#aside {
             width:17%;
+            align-items: flex-start;
             justify-content: center;
-            span#userAvatar {
-                width: 3.5rem;
-                height: 3.5rem
+            div#userAvatar {
+                width: 3rem;
+                height: 3rem;
             }
         }
     }   

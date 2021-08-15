@@ -6,7 +6,10 @@ import { SIGNIN } from "../../apis/api-auth"
 import auth from "../../helpers/auth.helper"
 import {SekxReactAlert} from "../../helpers/react.helpers"
 import {Redirect} from "react-router-dom"
-import { Button as GrommetButton, Card } from 'grommet';
+import { 
+    Button as GrommetButton, 
+    Card,
+    TextInput } from 'grommet';
 
 const logInfo = [{
     placeholder: "email: example@gmail.com",
@@ -65,7 +68,7 @@ return (
         <form onSubmit={(e)=>e.preventDefault()}>
         {values.error && 
             <SekxReactAlert>{values.error}</SekxReactAlert>}
-            {logInfo.map((e, i)=> <input 
+            {logInfo.map((e, i)=> <TextInput 
                 placeholder={e.placeholder}
                 type={e.type || "password"}
                 name={e.name}
@@ -97,18 +100,11 @@ form{
         min-height: 3rem;
         font-size: 1.3rem;
         border-radius: 0.31rem;
+        margin: 0.4em 0;
     }
     input {
-        margin-top: 0.1em;
-        margin-bottom: 0.9rem;
-        border: 1px solid grey;
         color: grey;
-        &:hover{
-            border: 1px solid #0e7713;
-        }
-        &:focus{
-            outline: 0;
-        }
+       
     }
     button{
         color: white;
@@ -123,7 +119,9 @@ form{
    #logs{
        padding:1em;
     form{
-        input {
+        input, button {
+            padding: 0 1rem;
+            min-height: 2.4rem;
             font-size: 1.07rem;
         }
     }

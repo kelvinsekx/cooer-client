@@ -107,13 +107,11 @@ const MUHA = (props) =>{
                     <AwesomeGuysToFollow /> :
                     (gists !== null) ? 
                     gists.map((gist, i)=> 
-                    <div style={{paddingTop: "10px"}}>
                     <Gist 
                         payload={gist}
                         status={"status"} 
                         key={i}
-                        link={`hey`} />
-                        </div>) : <TxtLoading />
+                        link={`hey`} />) : <TxtLoading />
                 }
 
             </div>
