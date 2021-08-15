@@ -57,11 +57,11 @@ return (
             <div id="rest">
                 <DPHEADER info={{ postedBy, created, pigeon}}/>
                 <div className="bd">
-	{/**                    <BODY 
+                    <BODY 
                         info={{text, likes: gist.likes, commentNumber,  pigeon, link,
                     id: payload._id}} 
                     actions={{clickLike, like}} 
-                    gist={payload}/> */}
+                    gist={payload}/>
                 </div>
             </div>
         </div>
