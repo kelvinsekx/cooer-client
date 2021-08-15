@@ -92,7 +92,7 @@ div.h--wrapper {
             overflow: hidden;
             img{
                 width: 100%;
-                height: auto;
+                height: 100%;
             }
         }
     }
