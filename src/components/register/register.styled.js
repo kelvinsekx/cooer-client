@@ -9,6 +9,7 @@ margin-top: 0px;
 border: none;
 gap: 1em;
 align-items: center;
+//fairly large screen
 @media (min-width: 650px){
     flex-direction: row;
     width: 92vw;

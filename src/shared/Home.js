@@ -11,7 +11,7 @@ const HOME = () => {
             <Styles>
                 <div id="main">
                     <HomeBanner />
-                    <div style={{ flexGrow: 1}} className="lg">
+                    <div style={{ flexGrow: 1}}>
                         <LogForm />
                     </div>
                 </div>
@@ -29,19 +29,19 @@ export const hm = (props)=> {
 }
 
 const Styles = styled.div`
+
 div#main{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     align-items: center;
-    .lg{
-        padding-top: 2rem;
-    }
+    gap: 1em;
 }
 @media (min-width: 900px){
     div#main{
         flex-direction: row;
         height: 100vh;
+	gap: 0em;
     }
 }
 

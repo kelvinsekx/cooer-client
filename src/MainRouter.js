@@ -13,7 +13,7 @@ import Menu from "./components/menu"
 
 const MAINROUTER = (props) =>
 {
-    return <div style={{fontFamily: "sans-serif", color: "#222"}}>
+    return <div>
     <Switch>
 
     {nRoutes.map((route, i) => (

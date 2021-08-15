@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import {StyledInput as Styles} from "./form.styled";
-
+import styled from "styled-components"
 
 const INPUT = ({placeholder, type, name, value,handleChange, w, readOnly, minLength, id, list})=>
 {
@@ -11,7 +10,6 @@ const INPUT = ({placeholder, type, name, value,handleChange, w, readOnly, minLen
     minLength = minLength ? minLength : null;
 
     function handleFocus (e) {
-        console.log(e.target.value)
         return setRecoll(true)
     }
 
@@ -40,5 +38,46 @@ return (
     </label>
 </Styles>
 )};
+
+export let Styles = styled.div`
+width: ${({w})=> '90%'};
+border-radius: 5px;
+label {
+    span{
+        display:inline-block;
+        font-size: 60%;
+        color: #111;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+        transition-delay: 0.7s;
+        ${
+            (props) => props.tr && css`
+            opacity: 1; 
+            visibility:visible;               
+            `
+        }
+    }
+    input{
+        padding: 0.99em 0 0.8em 0.7rem;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        font-size: 0.77rem;
+        background-color: rgba(150, 140, 140, 0.123);
+        &::placeholder{
+            color: #555;
+            font-size: 1.2rem;
+        }
+        &:focus{
+            outline: 0;
+        }
+    }
+}
+
+@media (min-width: 660px) {
+    width: ${({w})=> w + "%"};
+}
+`
 
 export default INPUT;

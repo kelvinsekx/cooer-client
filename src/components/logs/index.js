@@ -1,13 +1,21 @@
 import React, {useState} from "react";
-import {StyledLogs as Styles} from "./logs.styled"
+import styled from "styled-components"
 import Footer from "./footer";
 import { SIGNIN } from "../../apis/api-auth"
 
 import auth from "../../helpers/auth.helper"
 import {SekxReactAlert} from "../../helpers/react.helpers"
 import {Redirect} from "react-router-dom"
-
 import { Button as GrommetButton, Card } from 'grommet';
+
+const logInfo = [{
+    placeholder: "email: example@gmail.com",
+    name: "user_email",
+    type: "text"
+}, {
+    placeholder: "password",
+    name: "password",
+}]
 
 const LogForm = (props)=>{
     const [values, setValues] = useState({
@@ -49,34 +57,78 @@ const LogForm = (props)=>{
     if (redirectToReferrer) {
         return <Redirect to={from} />
     }
+
 return (
 <Styles>
     <Card 
         id="logs">
         <form onSubmit={(e)=>e.preventDefault()}>
         {values.error && 
-        <SekxReactAlert>{values.error}</SekxReactAlert>}
-            <input 
-                placeholder="email: example@gmail.com" 
-                type="text"
-                name="user_email"
-                onChange={handleChange("user_email")}
-            />
-            <input 
-                placeholder="password" 
-                type="password"
-                name="password"
-                onChange={handleChange("password")}
-            />
-             <GrommetButton 
-                    type="submit" 
-                    label="Log in"
-                    onClick={submit}>
-                </GrommetButton>
+            <SekxReactAlert>{values.error}</SekxReactAlert>}
+            {logInfo.map((e, i)=> <input 
+                placeholder={e.placeholder}
+                type={e.type || "password"}
+                name={e.name}
+                key={i}
+                onChange={handleChange(e.name)}
+            />)}
+            <GrommetButton 
+                type="submit" 
+                label="Log in"
+                onClick={submit}>
+            </GrommetButton>
         </form>
         <Footer />
     </Card>
 </Styles>
 )};
+
+const Styles = styled.div`
+display: flex;
+justify-content: center;
+#logs {
+    padding: 2em;
+    border: 0.6px solid #666;
+form{
+    display: flex;
+    flex-direction: column;
+    input, button {
+        padding: 0 2rem;
+        min-height: 3rem;
+        font-size: 1.3rem;
+        border-radius: 0.31rem;
+    }
+    input {
+        margin-top: 0.1em;
+        margin-bottom: 0.9rem;
+        border: 1px solid grey;
+        color: grey;
+        &:hover{
+            border: 1px solid #0e7713;
+        }
+        &:focus{
+            outline: 0;
+        }
+    }
+    button{
+        color: white;
+        background-color: #0e7713;
+        border:none;
+    }
+}
+}
+
+// mobile screen
+@media (max-width: 900px){
+   #logs{
+       padding:1em;
+    form{
+        input {
+            font-size: 1.07rem;
+        }
+    }
+   }
+}
+`
 
 export default LogForm

@@ -31,8 +31,7 @@ const config = {
 	        '@babel/preset-react'  	
 	     ],
 	     plugins: [
-		     "@babel/plugin-transform-runtime",
-	     	     "@babel/runtime"
+		     "@babel/plugin-transform-runtime"
 	     ]
 	  }
         },

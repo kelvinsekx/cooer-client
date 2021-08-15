@@ -19,13 +19,11 @@ const ChildBanner = () =>
 const Styles = styled.div`
 width: 100%;
 background-color: rgba(19, 212, 106, 0.3);
-padding: 0.1em;
 display: flex;
 flex-grow: 1;
 justify-content: space-between;
 align-items: center;
-padding:0 0.9em;
-height: 2rem;
+height: 2.4rem;
 .letterIcon {
     font-weight:bolder;
     font-size:120%;
