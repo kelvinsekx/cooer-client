@@ -43,7 +43,10 @@ const COO = (coos)=> {
     if(coos.length > 1) {
         return <div>
             {coos.map( coo => 
-            <Gist payload={coo} key={coo._id} />)
+            <Gist 
+                payload={coo}
+                status={"status"} 
+                key={coo._id} />)
         }</div>
     } else {
         return <div id="noCoo">No coo yet</div>
