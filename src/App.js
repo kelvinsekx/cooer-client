@@ -8,11 +8,11 @@ const theme = {
   global: {
     font: {
       family: 'Raleway, sans-serif',
-      size: '1rem',
+      size: '1.1rem',
       height: '1.6rem',
     },
     colors: {
-        control: "rgba(12, 230, 23, 0.5)"
+        control: "rgba(12, 230, 23, 0.8)"
     },
     padding: 0,
     margin: 0,

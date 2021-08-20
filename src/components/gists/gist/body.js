@@ -41,14 +41,14 @@ const BODY = ({info, actions, gist})=> {
                     </span>
                 </div>
     
-                <div>
+                {/* <div>
                     <span>
                         68
                     </span>
                     <span>
                     <FiCopy />
                     </span>
-                </div>
+                </div> */}
     
                 <div>
                     <span style={{fontSize: '60%', backgroundColor: "rgba(2, 141, 12, 0.8)", borderRadius: "100%", color: "white",minHeight: "1rem", minWidth: "1rem", fontWeight: "bold", display:"inline-block"}}>

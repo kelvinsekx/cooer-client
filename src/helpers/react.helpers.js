@@ -8,7 +8,7 @@ export const getStateFromProps = (location, payload)=> {
     };
 };
 
-export const SekxReactAlert = ({children, info, styles})=> {
+export const SekxReactAlert = ({children, info, styles={}})=> {
     return <div 
         style={{
             color: styles.color || "white", 
