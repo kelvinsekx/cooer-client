@@ -16,7 +16,7 @@ const PROFILEHEAD = (props) =>
 
 const ProfilePayload = ({user, jwt, follow, profileImage})=> <StyledProfile>
 <div className="profilestuff">
-    <img src={profileImage} alt={user.name} />
+    <div className="img"><img src={profileImage} alt={user.name} /></div>
     <div>
         <p>joined <JOINED_DAY date={user.join} /></p>
     </div>
@@ -72,10 +72,15 @@ padding: 0.3em 1em;
     align-items: center;
     flex-direction: column;
     font-size: 80%;
-    img{
+    .img{
         width: 6rem;
-        height: 6rem;
+        height: auto;
         border-radius: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
     }
 }
 .otherInfoWrapper{
@@ -109,9 +114,9 @@ padding: 0.3em 1em;
     padding: 0.3em 0.2em;
     .profilestuff{
         min-width: 22%;
-        img{
+        .img{
             width: 4rem;
-            height: 4rem;
+            height: auto;
         }
     } 
     .otherInfoWrapper{
