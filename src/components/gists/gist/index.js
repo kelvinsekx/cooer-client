@@ -74,6 +74,7 @@ border-radius: 2px;
 display: flex;
 padding: 0.6em;
 margin: 1em 0;
+width:95%;
 div.h--wrapper {
     flex-grow: 1;
     display: flex;

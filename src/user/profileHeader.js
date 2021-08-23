@@ -55,11 +55,8 @@ const COO = (coos)=> {
 
 
 const Styles = styled.div`
-width: 80%;
+width: 100%;
 div#header {
-    display: grid;
-    grid-template-columns: 40% 60%;
-    grid-gap: 2em;
     div.profileTabs{
         div#bar{
             display: flex;
@@ -90,13 +87,6 @@ div#header {
     height:94vh;
     overflow-y: scroll;
            
-}
-@media (max-width: 1150px) {
-    div#header {
-        grid-template-rows: 8rem 1fr;
-        grid-template-columns: 100%;
-        grid-gap: 3em;
-    }
 }
 `
 export default PROFILEHEADER;

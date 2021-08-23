@@ -1,7 +1,8 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 
 export const StyledRegisterForm = styled.div`
 width: 80%;
+border: 0px;
 a{
     display: inline-block;
     color: black;
@@ -12,28 +13,31 @@ a{
         background:rgba(19, 212, 106, 0.3);
     }
 }
-div{
+div#reg-card{
     background-color: white;
+    padding: 0.6em;
     form {
         #fieldset{
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: none !important;
             flex-shrink: 1;
             legend{
                 color:#0e7713;
-                font-size: 130%;
+                font-size: 100%;
             }
             div#formContent{
+                display: flex;
+                gap: 0.3em;
                 div.ytr{
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                 }
                 div.gendo{
+                    padding-top:0.5em;
                     div{
-                        display: flex;
+                        flex-grow: 1;
                     }
                 }
             }
@@ -50,11 +54,13 @@ div{
     }
 }
 @media (min-width:650px){
-    box-shadow: 1px 1px 1px 1px rgba(150, 140, 140, 0.323);
-    width:48%;
-    div {
+    width:42%;
+    div#reg-card {
         form {
             #fieldset {
+                legend{
+                    font-size: 120%;
+                }
                 div#formContent{
                     div.ytr{
                         flex-direction: row;
@@ -64,7 +70,6 @@ div{
         }
     }
     button{
-        margin: 2.345rem 0px;
         font-size: 1.5rem;
         width: 40%;
     }

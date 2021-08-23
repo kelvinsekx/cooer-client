@@ -19,7 +19,7 @@ const SIGNIN = async function (user) {
 
 const SIGNOUT = async function () {
     try {
-        let response = await fetch("/_v1/auth/signout", {
+        let response = await fetch(`${baseUrl}/_v1/auth/signout`, {
             method: "GET"
         });
         return await response.json()

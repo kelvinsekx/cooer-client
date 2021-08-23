@@ -65,7 +65,7 @@ const REGISTERFORM = ()=>
     }
 return (
 <Styles>
-    <Card>
+    <Card id="reg-card">
         <form onSubmit={(e)=>e.preventDefault()}>
             <div id='fieldset'>
                 <CardHeader>
@@ -88,14 +88,14 @@ return (
                     <div>
                         <INPUT 
                             placeholder="email" 
-                            w="90"
+                            w="100"
                             name='email'
                             handleChange={handleChange}
                         /> 
                     </div>
                     <div>
                         <INPUT
-                            placeholder="password" w="90" 
+                            placeholder="password" w="100" 
                             type="password" minLength="8"
                             name='password'
                             handleChange={handleChange}

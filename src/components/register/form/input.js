@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import styled from "styled-components"
+import styled, {css} from "styled-components"
+import {TextInput} from "grommet"
 
-const INPUT = ({placeholder, type, name, value,handleChange, w, readOnly, minLength, id, list})=>
+const INPUT = ({placeholder, type, name, value,handleChange, w, readOnly, minLength, id})=>
 {
     const [recoll, setRecoll] = useState(false)
     placeholder = placeholder ? placeholder : "";
@@ -22,9 +23,9 @@ return (
 <Styles w={w} tr={recoll}>
     <label htmlFor={placeholder}>
         <span>{placeholder}</span>
-        <input 
+        <TextInput 
             readOnly= {readOnly}
-            placeholder={placeholder} 
+            placeholder={placeholder}
             type={type}
             name={name}
             minLength={minLength}
@@ -32,20 +33,19 @@ return (
             value={value}
             onChange={handleChange(name)}
             onInput={handleFocus}
-            list={list}
-            onBlur={handleBlur}>
-        </input>
+            onBlur = {handleBlur}
+        />
     </label>
 </Styles>
 )};
 
 export let Styles = styled.div`
-width: ${({w})=> '90%'};
+width: ${({w})=> '100%'};
 border-radius: 5px;
 label {
     span{
         display:inline-block;
-        font-size: 60%;
+        font-size: 70%;
         color: #111;
         visibility: hidden;
         opacity: 0;
@@ -63,14 +63,10 @@ label {
         width: 100%;
         border-radius: 5px;
         border: none;
-        font-size: 0.77rem;
-        background-color: rgba(150, 140, 140, 0.123);
+        font-size: 0.82rem;
+        background-color: rgba(150, 140, 140, 0.083);
         &::placeholder{
             color: #555;
-            font-size: 1.2rem;
-        }
-        &:focus{
-            outline: 0;
         }
     }
 }

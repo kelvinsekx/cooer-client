@@ -13,7 +13,7 @@ function followTheseAwesomeGuyz () {
     useEffect(() => {
         let isMounted = true;
 
-        LIST(`query {allPeople(limit: 8, random: true){
+        LIST(`query {allPeople(limit: 10, random: true){
             username
             photo 
             bio
@@ -42,7 +42,7 @@ function followTheseAwesomeGuyz () {
         <StyledToFollow>
             <div>
                 {(list !== null) ? list.map((each, index)=><div className="lilintro" key={index}>
-                        <div className="dp"><img src={`${each.photo.data}?${new Date().getTime()}`}/></div>
+                        <div className="dp"><img src={`${each.photo}?${new Date().getTime()}`}/></div>
                         <div>
                             <Link to={`/profile/${each.username}`}>
                             <p className="un">{each.username}</p>
