@@ -116,7 +116,7 @@ padding: 0.3em 1em;
         min-width: 22%;
         .img{
             width: 4rem;
-            height: auto;
+            height: 4rem;
         }
     } 
     .otherInfoWrapper{
