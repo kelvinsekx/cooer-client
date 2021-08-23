@@ -8,7 +8,7 @@
     return `${txt}`
 }
 
-export const baseUrl = `http://localhost:4066`
+export const baseUrl = `https://shrouded-thicket-19388.herokuapp.com`
  export default {
      log, getLink
 }
