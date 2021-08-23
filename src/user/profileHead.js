@@ -80,7 +80,6 @@ padding: 0.3em 1em;
         img{
             width: 100%;
             height: auto;
-            border-radius: inherit;
         }
     }
 }
