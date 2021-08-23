@@ -76,6 +76,7 @@ padding: 0.3em 1em;
         width: 6rem;
         height: 6rem;
         border-radius: 100%;
+        overflow: hidden;
         img{
             width: 100%;
             height: auto;
