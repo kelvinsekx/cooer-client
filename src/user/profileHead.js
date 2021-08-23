@@ -74,11 +74,11 @@ padding: 0.3em 1em;
     font-size: 80%;
     .img{
         width: 6rem;
-        height: auto;
+        height: 6rem;
         border-radius: 100%;
         img{
             width: 100%;
-            height: 100%;
+            height: auto;
             border-radius: inherit;
         }
     }
