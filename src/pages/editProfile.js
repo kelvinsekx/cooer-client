@@ -4,6 +4,8 @@ import {READ, UPDATE} from "./../apis/user/api-user"
 
 import EDITPROFILE_COMPONENT from "../components/editProfile/main";
 import TxtLoading from "./../components/loading/txtIsLoading"
+import { toast } from 'react-toastify';
+import  'react-toastify/dist/ReactToastify.css';
 
 const EDIT = (props) => {
     const {match} = props
@@ -25,11 +27,20 @@ const EDIT = (props) => {
         user.anonymousname && userData.append('anonymousname', user.anonymousname)    
         UPDATE( match.params.userId, jwt.token, userData).then((data) => {      
             if (data && data.error) { 
-                console.log(data.error)       
+                 toast(data.error)       
                 setUser({...data, error: data.error})      
             } else {
                 //console.log(data)       
-                setUser({...data, redirectToProfile:true})      
+                setUser({...data, redirectToProfile:true}) 
+		toast("sucessfully updated", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        })
             }    
     })}
 

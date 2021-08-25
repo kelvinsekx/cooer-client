@@ -12,6 +12,8 @@ import TxtLoading from "./../components/loading/txtIsLoading"
 import {LISTNEWFEEDS, CREATE} from "../apis/gist/api-gist" 
 import {LIST,READ} from "../apis/user/api-user"
 
+import {Avatar} from "grommet"
+
 const MUHA = (props) =>{
     const [gists, setGists] = useState(null);
     const [members, setMembers] = useState(null);

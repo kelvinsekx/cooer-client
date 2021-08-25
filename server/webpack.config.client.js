@@ -1,6 +1,7 @@
 const PATH = require("path");
 const WEBPACK = require("webpack");
 const CWD = process.cwd();
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const DEV_CLIENT_CONFIG = {
     name: "browser",
@@ -21,7 +22,11 @@ const DEV_CLIENT_CONFIG = {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: ["babel-loader"]
-            }, 
+            },
+		{
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
             {
                 test: /\.(ttf|eot|svg|gif|jpg|png)$/,
                 include: /images/,
@@ -40,7 +45,8 @@ const DEV_CLIENT_CONFIG = {
     },
     plugins: [
         new WEBPACK.HotModuleReplacementPlugin(),
-        new WEBPACK.NoEmitOnErrorsPlugin()
+        new WEBPACK.NoEmitOnErrorsPlugin(),
+	new MiniCssExtractPlugin()
     ]
 };
 
