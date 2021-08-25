@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const cwd = process.cwd();
 //const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
   name: "production",
@@ -16,7 +17,8 @@ const config = {
 		new HtmlWebpackPlugin({
 		inject: true,
 		template: "./public/index.html"
-	})
+	}),
+		new MiniCssExtractPlugin()
 ],
   module: {
     rules: [
@@ -36,12 +38,16 @@ const config = {
 	  }
         },
       },
+	{
+        test: /\.css$/i,
+		use: ["style-loader", "css-loader"]
+      },
       { 
         test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/, 
         use: ["file-loader"] 
       },
     ],
-},
+}
 };
 
 module.exports = config;
