@@ -40,7 +40,7 @@ const COO = (coos)=> {
     if (coos == null) {
         return <TxtLoading />
     }
-    if(coos.length > 1) {
+    if(coos.length >= 1) {
         return <div>
             {coos.map( coo => 
             <Gist 
@@ -49,7 +49,7 @@ const COO = (coos)=> {
                 key={coo._id} />)
         }</div>
     } else {
-        return <div id="noCoo">No coo yet</div>
+        return <div id="noCoo">no coo yet</div>
     }
 }
 

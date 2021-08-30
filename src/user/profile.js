@@ -49,7 +49,7 @@ const PROFILE = (props)=> {
                 setRedirectToSignin(true)
             }else {
                if( !isMounted) return;
-               console.log(data)
+               //console.log(data)
                 const {data: {person}} = data;
                 const r = {
                     _id : person._id,
@@ -71,10 +71,11 @@ const PROFILE = (props)=> {
             { token: jwt.token}).then((res) => {    
             if (res.error) {      
                 console.log(res.error)    
-            } else {     
+            } else { 
+                console.log("res",res)    
                 setCoos(res);   
             }    
-        }).then(()=>setSt(false))
+        })
 
         return function cleanup () {
             abortController.abort()
@@ -113,7 +114,7 @@ const PROFILE = (props)=> {
             if (data.error) {      
                 console.log(data.error)    
             } else {   
-                //console.log(data) ;  
+                console.log("coos",data) ;  
                 return setUser({...user, coos: data});    
             }    
         })

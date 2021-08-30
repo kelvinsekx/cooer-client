@@ -80,13 +80,13 @@ div.h--wrapper {
     display: flex;
     align-items: top;
     div#aside {
-        width:19%;
+        margin-bottom: auto;
+        padding: 0 1rem;
         display:flex;
         justify-content: center;
         div#userAvatar {
             display: inline-block;
             align-self: center;
-            margin-top: -2rem;
             width: 2.7rem;
             height: 2.7rem;
             border-radius: 100%;
@@ -106,9 +106,6 @@ div.h--wrapper {
 @media (min-width: 600px) {
     div.h--wrapper {
         div#aside {
-            width:17%;
-            align-items: flex-start;
-            justify-content: center;
             div#userAvatar {
                 width: 3rem;
                 height: 3rem;

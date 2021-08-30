@@ -38,9 +38,9 @@ const config = {
 	  }
         },
       },
-	{
+	    {
         test: /\.css$/i,
-		use: ["style-loader", "css-loader"]
+		    use: ["style-loader", "css-loader"]
       },
       { 
         test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/, 
