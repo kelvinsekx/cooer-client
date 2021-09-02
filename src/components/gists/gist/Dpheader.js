@@ -14,9 +14,9 @@ const DPHEADER = ({info}) =>
         <div className="toPigeon">
             <Link to={`/profile/${info.pigeon}`}>@{info.pigeon.length > 10 ? info.pigeon.substring(0, 5) + "...": info.pigeon}</Link> 
         </div>
-        <div className="joined">
-            <CooerTimeTeller time={info.created} />
-        </div>
+    </div>
+    <div className="joined">
+        <CooerTimeTeller time={info.created} />
     </div>
 </div>
 </Styles>;
@@ -26,7 +26,7 @@ div#DBHead{
     background-color: white;
     color: rgba(0, 0, 0, 0.6);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     min-height:2rem;
     font-size: 98%;
     div.userSummary{
@@ -49,9 +49,10 @@ div#DBHead{
                 color: inherit;
             }
         }
-        div.joined {
-            padding-left: 0.3em;
-        }
+    }
+    div.joined {
+        font-size: 70%;
+        line-height: 110%;
     }
 }
 `

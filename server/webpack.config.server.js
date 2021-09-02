@@ -24,6 +24,10 @@ const WEBPACK_CONFIG = {
                 use: ["babel-loader"]
             },
             {
+        test: /\.css$/i,
+		    use: ["style-loader", "css-loader"]
+      },
+            {
                 test: /\.(ttf|eot|svg|gif|jpg|png)$/,
                 include: /images/,
                 use: [

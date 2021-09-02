@@ -51,10 +51,10 @@ const BODY = ({info, actions, gist})=> {
                 </div> */}
     
                 <div>
-                    <span style={{fontSize: '60%', backgroundColor: "rgba(2, 141, 12, 0.8)", borderRadius: "100%", color: "white",minHeight: "1rem", minWidth: "1rem", fontWeight: "bold", display:"inline-block"}}>
+                    <span style={{fontSize: '60%', backgroundColor: "rgba(2, 141, 12, 0.8)",  color: "white", fontWeight: "bold", height: "1.5em",display:"inline-block"}}>
                         6k
                     </span>
-                    <span style={{position: "relative", bottom: "0.5em"}}>
+                    <span>
                         savage
                     </span>
                 </div>
@@ -71,7 +71,6 @@ div#gistBody {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 0.45em;
     div.gistText{
         font-size:97%;
         color: #333333;

@@ -72,7 +72,7 @@ const Styles = styled.div`
 border: 0.05rem solid rgba(0, 0, 0, 0.2);
 border-radius: 2px;
 display: flex;
-padding: 0.6em;
+padding: 0.1em 0.4em;
 margin: 1em 0;
 width:95%;
 div.h--wrapper {
@@ -81,7 +81,7 @@ div.h--wrapper {
     align-items: top;
     div#aside {
         margin-bottom: auto;
-        padding: 0 1rem;
+        padding: 0 0.4rem;
         display:flex;
         justify-content: center;
         div#userAvatar {
